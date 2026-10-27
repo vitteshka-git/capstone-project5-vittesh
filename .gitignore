@@ -1,0 +1,39 @@
+
+# Environment files and secrets
+.env
+.env.*
+!.env.example
+
+# Go build outputs
+bin/
+dist/
+order-management
+*.exe
+*.test
+*.out
+coverage.out
+
+# Test and coverage reports
+coverage/
+test-results/
+
+# Logs
+*.log
+logs/
+
+# IDE and editor settings
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Operating-system files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+tmp/
+temp/
+
+# Local Docker overrides
+docker-compose.override.yml
