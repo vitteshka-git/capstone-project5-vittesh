@@ -3,6 +3,10 @@ version: 0.2
 phases:
   install:
     commands:
+      - export HOME=/tmp
+      - export GOCACHE=/tmp/go-build-cache
+      - export GOPATH=/tmp/go
+      - mkdir -p "$GOCACHE" "$GOPATH"
       - go version
 
   pre_build:
