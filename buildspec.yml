@@ -11,14 +11,24 @@ phases:
 
   pre_build:
     commands:
+      - echo "Downloading Go dependencies..."
       - go mod download
-      - go test ./...
+      - echo "Running unit tests..."
+      - go test -v ./...
+      - echo "Running race detector..."
+      - go test -race -v ./...
 
   build:
     commands:
+      - echo "Building Order Management API..."
       - mkdir -p build
       - go build -o build/order-management .
+      - echo "Building Product Service..."
       - go build -o build/product-service ./cmd/product-service
+
+  post_build:
+    commands:
+      - echo "All tests and builds completed successfully."
 
 artifacts:
   files:
